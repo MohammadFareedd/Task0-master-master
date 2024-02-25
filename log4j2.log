@@ -1,0 +1,124 @@
+2024-02-25 10:50:37  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 14428 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 10:50:37  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 10:50:41  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.252 seconds (process running for 5.748)
+2024-02-25 10:50:42  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 10:50:55  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 10:51:31 ERROR - [nio-8080-exec-4] c.e.T.Task0Application                   : You try to update non existing id
+2024-02-25 10:51:41 ERROR - [nio-8080-exec-5] c.e.T.Task0Application                   : You try to update non existing id
+2024-02-25 10:51:45  INFO - [nio-8080-exec-6] c.e.T.Task0Application                   : Task with Id:2 is updated
+2024-02-25 10:51:54  INFO - [nio-8080-exec-7] c.e.T.Task0Application                   : Task with Id:2 is deleted
+2024-02-25 10:52:01 ERROR - [nio-8080-exec-8] c.e.T.Task0Application                   : You try to delete non existing id
+2024-02-25 10:52:15  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Users are showed
+2024-02-25 10:52:36  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : New user was inserted
+2024-02-25 10:52:48 ERROR - [nio-8080-exec-3] c.e.T.Task0Application                   : You try to update non existing id
+2024-02-25 10:52:54  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : User with Id:2 is updated
+2024-02-25 10:53:03 ERROR - [nio-8080-exec-5] c.e.T.Task0Application                   : You try to delete non existing id
+2024-02-25 10:53:08 ERROR - [nio-8080-exec-6] o.h.e.j.s.SqlExceptionHelper             : Cannot delete or update a parent row: a foreign key constraint fails (`taskmanager`.`task`, CONSTRAINT `task_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+2024-02-25 10:54:23  INFO - [nio-8080-exec-8] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 11:08:06  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 14428 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 11:08:06  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 11:08:07  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.975 seconds (process running for 1051.148)
+2024-02-25 11:08:08  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 14428 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 11:08:08  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 11:08:09  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.546 seconds (process running for 1053.218)
+2024-02-25 12:09:04  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 14428 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:09:04  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:09:05  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 1.006 seconds (process running for 4709.526)
+2024-02-25 12:09:07  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 14428 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:09:07  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:09:07  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.517 seconds (process running for 4711.522)
+2024-02-25 12:14:19  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 17208 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:14:19  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:14:23  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.628 seconds (process running for 5.887)
+2024-02-25 12:47:56  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 7228 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:47:56  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:48:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 12:48:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.798 seconds (process running for 5.992)
+2024-02-25 12:49:04  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 1044 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:49:04  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:49:08  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.243 seconds (process running for 6.245)
+2024-02-25 12:49:28  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Users are showed
+2024-02-25 12:49:32  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : User with Id:2 is found
+2024-02-25 12:49:36 ERROR - [nio-8080-exec-4] c.e.T.Task0Application                   : You try to find non existing user
+2024-02-25 12:49:42  INFO - [nio-8080-exec-5] c.e.T.Task0Application                   : User with Id:2 is found
+2024-02-25 12:49:52 ERROR - [nio-8080-exec-7] c.e.T.Task0Application                   : You try to find non existing task
+2024-02-25 12:49:55  INFO - [nio-8080-exec-8] c.e.T.Task0Application                   : Task with Id:3 is found
+2024-02-25 12:52:04  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 1044 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:52:04  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:52:05  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 1.034 seconds (process running for 183.349)
+2024-02-25 12:52:07  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 1044 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:52:07  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:52:07  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.613 seconds (process running for 185.531)
+2024-02-25 12:52:17  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:52:23  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:52:25  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:52:33  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 5672 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:52:33  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:52:37  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.25 seconds (process running for 5.545)
+2024-02-25 12:53:17  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:54:49  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 11640 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:54:49  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:54:53  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.37 seconds (process running for 5.52)
+2024-02-25 12:54:56  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:55:04  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:55:08  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : User with Id:2 is found
+2024-02-25 12:55:13  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : User with Id:3 is found
+2024-02-25 12:55:26  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 11640 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:55:26  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:55:27  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.721 seconds (process running for 38.648)
+2024-02-25 12:56:48  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Users are showed
+2024-02-25 12:58:58  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 11640 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:58:58  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:58:59  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.828 seconds (process running for 251.242)
+2024-02-25 12:59:01  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 11640 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 12:59:01  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 12:59:01  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.692 seconds (process running for 253.458)
+2024-02-25 12:59:04  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Users are showed
+2024-02-25 12:59:12  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : User with Id:2 is deleted
+2024-02-25 12:59:22  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:25:31  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3412 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:25:31  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:25:35  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.613 seconds (process running for 5.764)
+2024-02-25 14:25:40  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:26:08  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3412 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:26:08  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:26:08  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.638 seconds (process running for 38.763)
+2024-02-25 14:26:09  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:26:10  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3412 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:26:10  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:26:10  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.537 seconds (process running for 40.814)
+2024-02-25 14:26:36  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3412 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:26:36  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:26:36  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.615 seconds (process running for 66.69)
+2024-02-25 14:26:38  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3412 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:26:38  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:26:38  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.456 seconds (process running for 68.662)
+2024-02-25 14:34:55  INFO - [nio-8080-exec-5] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:34:57  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:35:02 ERROR - [nio-8080-exec-2] c.e.T.Task0Application                   : Non existing foreign key
+2024-02-25 14:35:07 ERROR - [nio-8080-exec-6] c.e.T.Task0Application                   : Non existing foreign key
+2024-02-25 14:35:15  INFO - [nio-8080-exec-7] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:35:22  INFO - [nio-8080-exec-8] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:37:09  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 3008 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-02-25 14:37:09  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:37:12  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 4.218 seconds (process running for 5.398)
+2024-02-25 14:37:14  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:37:20  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:37:35  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:37:55  INFO - [nio-8080-exec-5] c.e.T.Task0Application                   : User with Id:3 is deleted
+2024-02-25 14:37:58  INFO - [nio-8080-exec-6] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:38:04  INFO - [nio-8080-exec-7] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:38:05  INFO - [nio-8080-exec-8] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:38:05  INFO - [nio-8080-exec-9] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:38:06  INFO - [io-8080-exec-10] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:38:17  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : New user was inserted
+2024-02-25 14:38:18  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : New user was inserted
+2024-02-25 14:38:24  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : User with Id:8 is deleted
+2024-02-25 14:38:31  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : Users are showed
+2024-02-25 14:38:36  INFO - [nio-8080-exec-5] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:38:54  INFO - [nio-8080-exec-6] c.e.T.Task0Application                   : New Task was inserted
+2024-02-25 14:38:58  INFO - [nio-8080-exec-7] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:42:25  INFO - [io-8080-exec-10] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:42:32  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : User with Id:6 is deleted
+2024-02-25 14:42:35  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : Tasks are showed
+2024-02-25 14:42:42  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Users are showed
