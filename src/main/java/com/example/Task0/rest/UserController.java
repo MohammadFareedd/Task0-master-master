@@ -1,28 +1,42 @@
 package com.example.Task0.rest;
 
-import com.example.Task0.entity.Task;
+
+import com.example.Task0.security.Jwt;
 import com.example.Task0.entity.User;
 import com.example.Task0.exceptions.IdNotFoundError;
 import com.example.Task0.logmessages.LogMessages;
+import com.example.Task0.security.LoginInfo;
+import com.example.Task0.service.BlacklistTokenService;
 import com.example.Task0.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 
-public class UserRestController {
+public class UserController {
     private UserService userService;
+    private PasswordEncoder passwordEncoder ;
+    private BlacklistTokenService blacklistTokenService;
+    @Autowired
+
+    public UserController(UserService userService, PasswordEncoder passwordEncoder, BlacklistTokenService blacklistTokenService) {
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
+        this.blacklistTokenService = blacklistTokenService;
+    }
+
 
     //Constructor dependency injection for user service and task service
-    @Autowired
-    public UserRestController(UserService userService) {
-        this.userService = userService;
 
-    }
+
+
     //Get request for getting all users
     @GetMapping("/users")
+  //  @Secured("admin")
     public List<User> findAllUsers(){
         LogMessages.logger.info("Users are showed");
         return userService.findAll();
@@ -30,16 +44,17 @@ public class UserRestController {
     }
     //Post request for adding new user
     @PostMapping("/users")
-    public User addUser(@RequestBody User theUser){
+    public String register(@RequestBody User theUser){
 
         LogMessages.logger.info("New user was inserted");
 
-        return userService.save(theUser);
-
+       userService.save(theUser);
+        return Jwt.generateToken(theUser.getEmail());
     }
     //Put request for update a user
     @PutMapping("/users")
     public User updateUser(@RequestBody User theUser){
+
         if (userService.findById(theUser.getId())==null){
             LogMessages.logger.error("You try to update non existing id");
             throw new IdNotFoundError("Non existing id");}
@@ -69,4 +84,31 @@ public class UserRestController {
         LogMessages.logger.info("User with Id:"+id+" is found");
         return temp;
     }
+
+    @PostMapping("/login")
+
+    public String login(@RequestBody String request) {
+        String email=request.split(",")[0].split(":")[1].replaceAll("\"","");
+        if (userService.findByUserEmail(email)==null)
+            return "Non existing user please register";
+        String password=((request.split(",")[1].split(":")[1].replaceAll("\"","").split("}")[0]));
+      if ((passwordEncoder.matches(password,userService.findByUserEmail((email)).getPassword()))){
+        return Jwt.generateToken(email);}
+        else{
+            return  "Password is Wrong";
+        }
+
+    }
+    @PostMapping("/logoutt")
+    public String logout(HttpServletRequest request){
+        String a = request.getHeader("Authorization");
+
+
+            String token = (a.split((" ")))[1];
+            blacklistTokenService.addNew(token);
+            return "Logged out successfully";}
+
+
+
+
 }

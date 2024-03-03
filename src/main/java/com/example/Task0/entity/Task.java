@@ -2,6 +2,9 @@ package com.example.Task0.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.Collection;
+
 //@Entity class for the task table in the database
 @Entity
 @Table(name = "task")
@@ -20,6 +23,7 @@ public class Task {
     private User user;
 
 
+
     public Task() {
     }
 
@@ -29,6 +33,8 @@ public class Task {
         this.completed = completed;
         this.user = user;
     }
+
+
 
     public int getId() {
         return id;
@@ -62,6 +68,8 @@ public class Task {
         this.user = user;
     }
 
+
+
     @Override
     public String toString() {
         return "Task{" +
@@ -69,6 +77,7 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", completed=" + completed +
                 ", user=" + user +
+
                 '}';
     }
 }

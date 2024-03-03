@@ -27,7 +27,7 @@
 
     <Loggers>
         <Root level="ERROR">
-            <AppenderRef ref="FileAppender" />
+            <AppenderRef ref="ConsoleAppender" />
         </Root>
 
         <Logger name="com.example" level="INFO" additivity="false">

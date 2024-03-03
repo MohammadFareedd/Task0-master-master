@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 
-public class TaskRestController {
+public class TaskController {
 
     private TaskService taskService;
     private UserService userService;
     @Autowired
-    public TaskRestController(TaskService taskService, UserService userService) {
+    public TaskController(TaskService taskService, UserService userService) {
         this.taskService = taskService;
         this.userService = userService;
     }
