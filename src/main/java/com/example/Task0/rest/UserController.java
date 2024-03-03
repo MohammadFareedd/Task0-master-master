@@ -1,6 +1,7 @@
 package com.example.Task0.rest;
 
 
+import com.example.Task0.entity.BlacklistToken;
 import com.example.Task0.security.Jwt;
 import com.example.Task0.entity.User;
 import com.example.Task0.exceptions.IdNotFoundError;
@@ -93,7 +94,10 @@ public class UserController {
             return "Non existing user please register";
         String password=((request.split(",")[1].split(":")[1].replaceAll("\"","").split("}")[0]));
       if ((passwordEncoder.matches(password,userService.findByUserEmail((email)).getPassword()))){
-        return Jwt.generateToken(email);}
+
+        String token= Jwt.generateToken(email);
+          blacklistTokenService.addNew(token,userService.findByUserEmail((email)));
+      return token;}
         else{
             return  "Password is Wrong";
         }
@@ -102,11 +106,17 @@ public class UserController {
     @PostMapping("/logoutt")
     public String logout(HttpServletRequest request){
         String a = request.getHeader("Authorization");
-
-
             String token = (a.split((" ")))[1];
-            blacklistTokenService.addNew(token);
+            blacklistTokenService.deleteToken(token);
             return "Logged out successfully";}
+    @PostMapping("/logoutall")
+    public String logoutall(HttpServletRequest request){
+        String a = request.getHeader("Authorization");
+        String curnnet_token = (a.split((" ")))[1];
+        List<BlacklistToken> list = blacklistTokenService.findAllVaildToken(blacklistTokenService.findBlacklistTokenByName(curnnet_token).getUser().getId());
+        for (BlacklistToken token:list){
+        blacklistTokenService.deleteToken(token.getName());}
+        return "Logged out successfully from all accounts";}
 
 
 

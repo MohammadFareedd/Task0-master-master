@@ -45,9 +45,11 @@ public class AuthenticationFilter extends OncePerRequestFilter {
 
        String a = request.getHeader("Authorization");
 
-       if(a!=null && blacklistTokenService.findBlacklistTokenByName( (a.split((" ")))[1])==null) {
+       if(a!=null && blacklistTokenService.findBlacklistTokenByName( (a.split((" ")))[1])!=null) {
+
 
            String token = (a.split((" ")))[1];
+
            String userName = Jwt.extractUsername(token);
 
            UserDetails userDetails = userDetailsService.loadUserByUsername(userName);

@@ -31,11 +31,16 @@ public class User  {
 
 
     private List<Task> task;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+
+
+    private List<BlacklistToken> blacklistTokens;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+
     public User() {
     }
 
@@ -46,6 +51,7 @@ public class User  {
         this.password =password;
         this.age=age;
         this.task = new ArrayList<>();
+        this.blacklistTokens=new ArrayList<>();
     }
 
     public User(String userName, String email, String password, int age, Collection<Role> roles) {
@@ -55,6 +61,7 @@ public class User  {
         this.password =password;
         this.age = age;
         this.task = new ArrayList<>();
+        this.blacklistTokens=new ArrayList<>();
         this.roles = roles;
     }
 
@@ -104,7 +111,9 @@ public class User  {
         this.task = task;
     }
 
-
+    public void setBlacklistTokens(List<BlacklistToken> blacklistTokens) {
+        this.blacklistTokens = blacklistTokens;
+    }
 
     public Collection<Role> getRoles() {
         return roles;
