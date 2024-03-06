@@ -95,7 +95,8 @@ public class TaskController {
         return temp;
     }
     @GetMapping("/tasks/user/{id}")
-    public List<Task> userTasks(@PathVariable int id,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "2") int size,@RequestParam(defaultValue = "id") String sort){
+    public List<Task> userTasks(@PathVariable int id,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = Integer.MAX_VALUE+"") int size,
+                                @RequestParam(defaultValue = "id") String sort){
         Page<Task> temp = taskService.findUserTask(id,page,size,sort);
 
 

@@ -435,3 +435,32 @@
 2024-03-06 14:38:04  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Tasks for user:1 are found
 2024-03-06 14:38:10  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Tasks for user:1 are found
 2024-03-06 14:38:15  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 14:40:57  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 14:40:57  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 14:40:58  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.869 seconds (process running for 212.598)
+2024-03-06 14:41:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 14:41:00  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 14:41:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.606 seconds (process running for 214.692)
+2024-03-06 14:50:26  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 14:50:34  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:05:45  INFO - [nio-8080-exec-6] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:11:22  INFO - [nio-8080-exec-5] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:11:45  INFO - [nio-8080-exec-1] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:33:59  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 15:33:59  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 15:34:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 1.069 seconds (process running for 3394.38)
+2024-03-06 15:34:01  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 15:34:01  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 15:34:02  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.859 seconds (process running for 3396.737)
+2024-03-06 15:53:27  INFO - [nio-8080-exec-4] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:53:58  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 15:53:58  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 15:53:59  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 1.013 seconds (process running for 4593.486)
+2024-03-06 15:54:00  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 15:54:00  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 15:54:01  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.695 seconds (process running for 4595.655)
+2024-03-06 15:55:23  INFO - [  restartedMain] c.e.T.Task0Application                   : Starting Task0Application using Java 21.0.2 with PID 13992 (C:\Users\Mohammad.Fareed\Desktop\Task0-master-master\target\classes started by Mohammad.Fareed in C:\Users\Mohammad.Fareed\Desktop\Task0-master-master)
+2024-03-06 15:55:23  INFO - [  restartedMain] c.e.T.Task0Application                   : No active profile set, falling back to 1 default profile: "default"
+2024-03-06 15:55:24  INFO - [  restartedMain] c.e.T.Task0Application                   : Started Task0Application in 0.925 seconds (process running for 4678.471)
+2024-03-06 15:55:44  INFO - [nio-8080-exec-2] c.e.T.Task0Application                   : Tasks for user:1 are found
+2024-03-06 15:56:40  INFO - [nio-8080-exec-3] c.e.T.Task0Application                   : Tasks for user:1 are found
