@@ -6,6 +6,7 @@ import com.example.Task0.logmessages.LogMessages;
 import com.example.Task0.service.TaskService;
 import com.example.Task0.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,9 +28,9 @@ public class TaskController {
 
     //Get request for getting all tasks
     @GetMapping("/tasks")
-    public List<Task> findAllTasks(){
+    public List<Task> findAllTasks(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "3") int size,@RequestParam(defaultValue = "id") String sort){
         LogMessages.logger.info("Tasks are showed");
-        return taskService.findAll();
+        return taskService.findAll(page,size,sort).getContent();
     }
 
     //Post request for add new task
@@ -41,8 +42,12 @@ public class TaskController {
             LogMessages.logger.error("Non existing foreign key");
             throw new IdNotFoundError("Non existing foreign key");
         }
-         Task task=taskService.save(theTask);
-         if (task==null) throw new IdNotFoundError("there is an existing task in this period "+theTask.getStart()+" "+theTask.getEnd());
+
+
+        if(theTask.getStart().compareTo(theTask.getEnd())>=0)throw new IdNotFoundError("Invalid start and end "+theTask.getStart()+" "+theTask.getEnd());
+        Task task=taskService.save(theTask);
+        if (task==null) throw new IdNotFoundError("there is an existing task in this period "+theTask.getStart()+" "+theTask.getEnd());
+
         LogMessages.logger.info("New Task was inserted");
         return task;
 
@@ -58,6 +63,8 @@ public class TaskController {
             LogMessages.logger.error("non existing foreign key");
             throw new IdNotFoundError("Non existing foreign key");
         }
+        if(theTask.getStart().compareTo(theTask.getEnd())>=0)throw new IdNotFoundError("Invalid start and end "+theTask.getStart()+" "+theTask.getEnd());
+
         Task task=taskService.save(theTask);
         if (task==null) throw new IdNotFoundError("there is an existing task in this period "+theTask.getStart()+" "+theTask.getEnd());
 
@@ -86,6 +93,14 @@ public class TaskController {
 
         LogMessages.logger.info("Task with Id:"+id+" is found");
         return temp;
+    }
+    @GetMapping("/tasks/user/{id}")
+    public List<Task> userTasks(@PathVariable int id,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "2") int size,@RequestParam(defaultValue = "id") String sort){
+        Page<Task> temp = taskService.findUserTask(id,page,size,sort);
+
+
+        LogMessages.logger.info("Tasks for user:"+id+" are found");
+        return temp.getContent();
     }
 
 }

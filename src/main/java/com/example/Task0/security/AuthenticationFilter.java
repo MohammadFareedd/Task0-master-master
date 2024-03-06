@@ -52,13 +52,16 @@ public class AuthenticationFilter extends OncePerRequestFilter {
 
            String userName = Jwt.extractUsername(token);
 
+
            UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
+
            if (userDetails==null){
 
                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 
            }
            else if (jwt.validateToken(token, userDetails)) {
+
                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                SecurityContextHolder.getContext().setAuthentication(authToken);

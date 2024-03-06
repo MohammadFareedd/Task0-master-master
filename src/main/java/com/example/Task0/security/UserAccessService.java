@@ -26,6 +26,7 @@ public class UserAccessService implements AuthorizationManager<RequestAuthorizat
 
         }
         else {
+
              userId= Integer.parseInt(a.split("=")[1].split("}")[0]);
         }
 

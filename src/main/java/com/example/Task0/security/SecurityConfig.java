@@ -44,6 +44,9 @@ public class SecurityConfig   {
 
                        .requestMatchers(HttpMethod.GET,"/tasks","/users").hasAuthority("admin")
                         .requestMatchers("/users/{id}").access(userAccessService)
+                        .requestMatchers("/tasks/user/{id}").access(userAccessService)
+
+
                         .requestMatchers("/tasks/{id}").access(taskAccessService)
                         .requestMatchers(HttpMethod.PUT,"/users").access(userAccessService)
                         .requestMatchers("/tasks").access(taskAccessService)
