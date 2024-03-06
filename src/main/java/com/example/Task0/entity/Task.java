@@ -3,7 +3,9 @@ package com.example.Task0.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 
 //@Entity class for the task table in the database
 @Entity
@@ -17,6 +19,11 @@ public class Task {
     private String description;
     @Column(name = "completed")
     private boolean completed;
+    @Column (name = "start")
+    private Date start;
+    @Column (name = "end")
+    private Date end;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonIgnoreProperties({"task","userName","email","password","age"})
@@ -27,10 +34,12 @@ public class Task {
     public Task() {
     }
 
-    public Task(String description, boolean completed, User user) {
+    public Task( String description, boolean completed, Date start, Date end, User user) {
 
         this.description = description;
         this.completed = completed;
+        this.start = start;
+        this.end = end;
         this.user = user;
     }
 
@@ -58,6 +67,26 @@ public class Task {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public String getStart() {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return (simpleDateFormat.format(this.start));
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return (simpleDateFormat.format(this.end));
+    }
+
+    public void setEnd(Date end) {
+        this.end = end;
     }
 
     public User getUser() {

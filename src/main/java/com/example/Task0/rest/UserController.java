@@ -50,7 +50,11 @@ public class UserController {
         LogMessages.logger.info("New user was inserted");
 
        userService.save(theUser);
-        return Jwt.generateToken(theUser.getEmail());
+        String token= Jwt.generateToken(theUser.getEmail());
+
+        blacklistTokenService.addNew(token,theUser);
+        return token;
+
     }
     //Put request for update a user
     @PutMapping("/users")
@@ -96,6 +100,7 @@ public class UserController {
       if ((passwordEncoder.matches(password,userService.findByUserEmail((email)).getPassword()))){
 
         String token= Jwt.generateToken(email);
+        System.out.println(passwordEncoder.encode(token));
           blacklistTokenService.addNew(token,userService.findByUserEmail((email)));
       return token;}
         else{

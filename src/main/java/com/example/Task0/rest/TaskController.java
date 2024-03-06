@@ -41,8 +41,11 @@ public class TaskController {
             LogMessages.logger.error("Non existing foreign key");
             throw new IdNotFoundError("Non existing foreign key");
         }
+         Task task=taskService.save(theTask);
+         if (task==null) throw new IdNotFoundError("there is an existing task in this period "+theTask.getStart()+" "+theTask.getEnd());
         LogMessages.logger.info("New Task was inserted");
-        return taskService.save(theTask);
+        return task;
+
 
     }
     //Put request fot update a task
@@ -55,8 +58,13 @@ public class TaskController {
             LogMessages.logger.error("non existing foreign key");
             throw new IdNotFoundError("Non existing foreign key");
         }
+        Task task=taskService.save(theTask);
+        if (task==null) throw new IdNotFoundError("there is an existing task in this period "+theTask.getStart()+" "+theTask.getEnd());
+
+
         LogMessages.logger.info("Task with Id:"+theTask.getId()+" is updated");
-        return taskService.save(theTask);
+        return task;
+
     }
 
     //Delete request for deleting a task depending on its id

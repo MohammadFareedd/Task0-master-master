@@ -2,7 +2,6 @@ package com.example.Task0.service;
 
 import com.example.Task0.dao.TaskRepository;
 import com.example.Task0.entity.Task;
-import com.example.Task0.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 //Service class for dealing with task repository
 @Service
-public class TaskServiveImp implements TaskService{
+public class TaskServiceImp implements TaskService{
     private TaskRepository taskRepository;
     @Autowired
-    public TaskServiveImp(TaskRepository taskRepository) {
+    public TaskServiceImp(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
 
     }
@@ -25,7 +24,9 @@ public class TaskServiveImp implements TaskService{
 
     @Override
     public Task save(Task theUser) {
-        return taskRepository.save(theUser);
+        if (taskRepository.checkTaskDate(theUser.getUser().getId(),theUser.getStart(),theUser.getEnd()).size()==0)
+            return taskRepository.save(theUser);
+        return null;
     }
 
     @Override

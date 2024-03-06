@@ -32,8 +32,6 @@ public class User  {
 
     private List<Task> task;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-
-
     private List<BlacklistToken> blacklistTokens;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles",
