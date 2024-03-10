@@ -36,7 +36,7 @@ public class TaskServiceImp implements TaskService{
 
     @Override
     public Task save(Task theUser) {
-        if (taskRepository.checkTaskDate(theUser.getUser().getId(),theUser.getStart(),theUser.getEnd()).size()==0)
+        if (taskRepository.checkTaskDate(theUser.getUser().getId(), theUser.getStart(), theUser.getEnd()).isEmpty())
             return taskRepository.save(theUser);
         return null;
     }

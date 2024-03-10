@@ -1,9 +1,13 @@
 package com.example.Task0.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 @Entity
 @Table(name = "role")
+@AllArgsConstructor
+@Builder
 public class Role {
 
     @Id

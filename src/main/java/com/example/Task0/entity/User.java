@@ -1,6 +1,8 @@
 package com.example.Task0.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,7 +13,10 @@ import java.util.List;
 
 //@Entity class for the user table in the database
 @Entity
+@AllArgsConstructor
+@Builder
 @Table(name = "user")
+
 public class User  {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

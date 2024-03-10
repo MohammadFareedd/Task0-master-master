@@ -73,6 +73,6 @@ public class UserServiceImp implements UserService{
                 mapRolesToAuthorities(user.getRoles()),user.getId());
     }
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRole())).collect(Collectors.toList());
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRole())). collect(Collectors.toList());
     }
 }

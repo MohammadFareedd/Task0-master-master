@@ -2,6 +2,8 @@ package com.example.Task0.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;
@@ -10,6 +12,8 @@ import java.util.Date;
 //@Entity class for the task table in the database
 @Entity
 @Table(name = "task")
+@AllArgsConstructor
+@Builder
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

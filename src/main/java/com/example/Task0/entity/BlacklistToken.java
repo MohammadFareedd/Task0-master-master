@@ -2,10 +2,14 @@ package com.example.Task0.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import org.springframework.beans.factory.annotation.Value;
 
 @Entity
 @Table (name = "Blacklist_token")
+@AllArgsConstructor
+@Builder
 public class BlacklistToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
