@@ -49,7 +49,7 @@ public class UserController {
 
         LogMessages.logger.info("New user was inserted");
 
-       userService.save(theUser);
+        userService.save(theUser);
         String token= Jwt.generateToken(theUser.getEmail());
 
         blacklistTokenService.addNew(token,theUser);

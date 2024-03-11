@@ -3,7 +3,7 @@ package com.example.Task0.Service;
 import com.example.Task0.dao.UserRepository;
 import com.example.Task0.entity.Role;
 import com.example.Task0.entity.User;
-import com.example.Task0.service.UserService;
+
 import com.example.Task0.service.UserServiceImp;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -59,6 +59,18 @@ public class UserServiceTest {
         assertEquals(temp.getUsername(),email);
 
     }
+
+    @Test
+    public void  UserService_LoadByName_TestNull(){
+
+        String email="l";
+
+        when(userRepository.findUserByEmail(email)).thenReturn(null);
+
+        UserDetails temp = userService.loadUserByUsername(email);
+        assertThat(temp).isNull();
+
+    }
     @Test
     public void Save_Test(){
         User user=new User("Mohammad","Mohammad@gmail.com","test",21);
@@ -89,6 +101,13 @@ public class UserServiceTest {
         when(userRepository.findById(Mockito.anyInt())).thenReturn(Optional.ofNullable(user));
         User temp=userService.findById(id);
         assertThat(temp).isNotNull();
+    }
+    @Test
+    public void findUserByIdNullCase_Test(){
+        int id=0;
+        when(userRepository.findById(Mockito.anyInt())).thenReturn(Optional.ofNullable(null));
+        User temp=userService.findById(id);
+        assertThat(temp).isNull();
     }
 
 

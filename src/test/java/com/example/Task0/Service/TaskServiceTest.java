@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
@@ -42,6 +43,23 @@ public class TaskServiceTest {
         when(taskRepository.save(Mockito.any(Task.class))).thenReturn(task);
         taskServiceImp.save(task);
         assertThat(task).isNotNull();
+
+
+
+    }
+    @Test
+    public void TaskService_Save_ReturnNull(){
+        User user=Mockito.mock(User.class);
+        Date start=Mockito.mock(Date.class);
+        Date end=Mockito.mock(Date.class);
+        Task task=new Task("nice",false,start,end,user);
+        List<Task>l=new ArrayList<Task>();
+        l.add(task);
+        when(taskRepository.checkTaskDate(Mockito.anyInt(),Mockito.anyString(),Mockito.anyString())).thenReturn(l);
+
+        Task temp=taskServiceImp.save(task);
+
+        assertThat(temp).isNull();
 
 
 
@@ -83,6 +101,17 @@ public class TaskServiceTest {
         when(taskRepository.findById(Mockito.anyInt())).thenReturn(Optional.ofNullable(task));
         Task t=taskServiceImp.findById(1);
         assertThat(t).isNotNull();
+
+    }
+    @Test
+    public  void  findTaskById_TestNullcase(){
+        User user=Mockito.mock(User.class);
+        Date start=Mockito.mock(Date.class);
+        Date end=Mockito.mock(Date.class);
+        Task task=new Task(1,"nice",false,start,end,user);
+        when(taskRepository.findById(Mockito.anyInt())).thenReturn(Optional.ofNullable(null));
+        Task t=taskServiceImp.findById(1);
+        assertThat(t).isNull();
 
     }
     @Test
