@@ -26,8 +26,8 @@
     </Appenders>
 
     <Loggers>
-        <Root level="ERROR">
-            <AppenderRef ref="ConsoleAppender" />
+        <Root level="Info">
+            <AppenderRef ref="FileAppender" />
         </Root>
 
         <Logger name="com.example" level="INFO" additivity="false">

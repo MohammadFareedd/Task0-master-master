@@ -5,9 +5,8 @@ import com.example.Task0.entity.User;
 import com.example.Task0.security.AuthenticationFilter;
 import com.example.Task0.service.BlacklistTokenService;
 import com.example.Task0.service.UserService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.hamcrest.CoreMatchers;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;

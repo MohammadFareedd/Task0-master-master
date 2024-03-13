@@ -3,9 +3,8 @@ package com.example.Task0.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.annotations.Formula;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +16,7 @@ import java.util.List;
 @Builder
 @Table(name = "user")
 
-public class User  {
+public class User{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
@@ -30,11 +29,11 @@ public class User  {
     private String password;
     @Column(name = "age")
     private int age;
+    @Transient
+    private String id_UserName;
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-
-
     private List<Task> task;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<BlacklistToken> blacklistTokens;
@@ -55,6 +54,7 @@ public class User  {
         this.age=age;
         this.task = new ArrayList<>();
         this.blacklistTokens=new ArrayList<>();
+
     }
 
     public User(String userName, String email, String password, int age, Collection<Role> roles) {
@@ -66,6 +66,7 @@ public class User  {
         this.task = new ArrayList<>();
         this.blacklistTokens=new ArrayList<>();
         this.roles = roles;
+
     }
 
     public int getId() {
@@ -125,6 +126,13 @@ public class User  {
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
+
+    public String getId_UserName() {
+        this.id_UserName=id+" "+this.userName;
+        return id_UserName;
+    }
+
+
 
     @Override
     public String toString() {
