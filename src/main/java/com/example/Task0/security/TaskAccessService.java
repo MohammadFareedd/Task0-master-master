@@ -20,20 +20,24 @@ public class TaskAccessService implements AuthorizationManager<RequestAuthorizat
     public AuthorizationDecision check(Supplier<Authentication> authenticationSupplier, RequestAuthorizationContext object) {
 
         String a = (object.getVariables()).toString();
+        System.out.println(a);
 
         int taskId;
         int userId;
+        //update
         if (object.getRequest().getMethod().equals("PUT")){
             taskId= Integer.parseInt((object.getRequest().getParameter("id")));
             userId=taskService.findById(taskId).getUser().getId();
 
         }
+        //new task
         else if (a.equals("{}")){
             userId= Integer.parseInt((object.getRequest().getParameter("id")));
 
 
 
         }
+        //get task by id
         else {
          taskId= Integer.parseInt(a.split("=")[1].split("}")[0]);
          userId=taskService.findById(taskId).getUser().getId();

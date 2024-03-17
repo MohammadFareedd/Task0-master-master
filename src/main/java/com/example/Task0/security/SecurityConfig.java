@@ -49,6 +49,7 @@ public class SecurityConfig   {
 
                         .requestMatchers("/tasks/{id}").access(taskAccessService)
                         .requestMatchers(HttpMethod.PUT,"/users").access(userAccessService)
+                        .requestMatchers(HttpMethod.PUT,"/userupdate").access(userAccessService)
                         .requestMatchers("/tasks").access(taskAccessService)
                         .anyRequest().authenticated()
                 ).addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)

@@ -1,5 +1,6 @@
 package com.example.Task0;
 import com.example.Task0.security.AuthenticationFilter;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,10 @@ public class Task0Application {
 	@Bean
 	public AntPathMatcher pathMatcher(){
 		return new AntPathMatcher();
+	}
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
 	}
 
 

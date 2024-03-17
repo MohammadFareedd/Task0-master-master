@@ -1,12 +1,11 @@
 package com.example.Task0.rest;
-
-
+import com.example.Task0.dto.Mapper;
+import com.example.Task0.dto.UserDTO;
 import com.example.Task0.entity.BlacklistToken;
 import com.example.Task0.security.Jwt;
 import com.example.Task0.entity.User;
 import com.example.Task0.exceptions.IdNotFoundError;
 import com.example.Task0.logmessages.LogMessages;
-import com.example.Task0.security.LoginInfo;
 import com.example.Task0.service.BlacklistTokenService;
 import com.example.Task0.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,21 +15,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @RestController
 
 public class UserController {
     private UserService userService;
     private PasswordEncoder passwordEncoder ;
     private BlacklistTokenService blacklistTokenService;
-    @Autowired
+    private Mapper mapper;
 
-    public UserController(UserService userService, PasswordEncoder passwordEncoder, BlacklistTokenService blacklistTokenService) {
+    @Autowired
+    public UserController(UserService userService, PasswordEncoder passwordEncoder, BlacklistTokenService blacklistTokenService, Mapper mapper) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.blacklistTokenService = blacklistTokenService;
+        this.mapper = mapper;
     }
-
-
     //Constructor dependency injection for user service and task service
 
 
@@ -38,9 +39,12 @@ public class UserController {
     //Get request for getting all users
     @GetMapping("/users")
   //  @Secured("admin")
-    public List<User> findAllUsers(){
+        public List<UserDTO> findAllUsers(){
         LogMessages.logger.info("Users are showed");
-        return userService.findAll();
+        return userService.findAll()
+                .stream()
+                .map(mapper::toDto)
+                .collect(toList());
 
     }
     //Post request for adding new user
@@ -58,7 +62,7 @@ public class UserController {
     }
     //Put request for update a user
     @PutMapping("/users")
-    public User updateUser(@RequestBody User theUser){
+    public UserDTO updateUser(@RequestBody User theUser){
 
         if (userService.findById(theUser.getId())==null){
             LogMessages.logger.error("You try to update non existing id");
@@ -66,7 +70,22 @@ public class UserController {
 
         LogMessages.logger.info("User with Id:"+theUser.getId()+" is updated");
 
-        return userService.save(theUser);
+        return mapper.toDto(userService.save(theUser));
+    }
+    @PutMapping("/userupdate")
+    public UserDTO updateUser(@RequestBody UserDTO userDTO){
+        User theUser=userService.findByUserEmail(userDTO.getEmail());
+
+        if (theUser==null){
+
+            LogMessages.logger.error("You try to update non existing id");
+            throw new IdNotFoundError("Non existing id");}
+
+        LogMessages.logger.info("User with Id:"+theUser.getId()+" is updated");
+
+        userService.save(mapper.toUser(userDTO,theUser));
+
+        return userDTO;
     }
     //Delete request for deleting a user depending on its id
     @DeleteMapping("/users/{id}")
@@ -80,14 +99,14 @@ public class UserController {
 
     }
     @GetMapping("/users/{id}")
-    public User searchById(@PathVariable int id){
+    public UserDTO searchById(@PathVariable int id){
         User temp=userService.findById(id);
         if (temp==null){
             LogMessages.logger.error("You try to find non existing user");
             throw new IdNotFoundError("Non existing id");}
 
         LogMessages.logger.info("User with Id:"+id+" is found");
-        return temp;
+        return mapper.toDto(temp);
     }
 
     @PostMapping("/login")
@@ -122,8 +141,5 @@ public class UserController {
         for (BlacklistToken token:list){
         blacklistTokenService.deleteToken(token.getName());}
         return "Logged out successfully from all accounts";}
-
-
-
 
 }

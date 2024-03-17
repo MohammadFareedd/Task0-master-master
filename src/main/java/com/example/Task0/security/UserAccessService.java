@@ -20,6 +20,8 @@ public class UserAccessService implements AuthorizationManager<RequestAuthorizat
     public AuthorizationDecision check(Supplier<Authentication> authenticationSupplier, RequestAuthorizationContext object) {
 
         int userId;
+
+
         String a = (object.getVariables()).toString();
         if (object.getRequest().getMethod().equals("PUT")){
             userId= Integer.parseInt((object.getRequest().getParameter("id")));
@@ -43,7 +45,6 @@ public class UserAccessService implements AuthorizationManager<RequestAuthorizat
 
     }
     public boolean hasUserId(Authentication authentication, int userId) {
-
 
 
 

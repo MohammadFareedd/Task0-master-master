@@ -44,8 +44,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-log4j2</artifactId>
 	</dependency>
-
-
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
 
 
@@ -70,6 +74,7 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.12.5</version> <!-- Use the latest version available -->
 		</dependency>
+
 
 
 

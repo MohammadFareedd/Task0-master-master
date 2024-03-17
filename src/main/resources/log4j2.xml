@@ -27,11 +27,12 @@
 
     <Loggers>
         <Root level="Info">
-            <AppenderRef ref="FileAppender" />
+            <AppenderRef ref="ConsoleAppender" />
         </Root>
 
         <Logger name="com.example" level="INFO" additivity="false">
             <AppenderRef ref="FileAppender" />
+                <AppenderRef ref="ConsoleAppender" />
         </Logger>
     </Loggers>
 </Configuration>
