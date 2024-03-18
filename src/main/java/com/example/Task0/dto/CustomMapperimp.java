@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Mapper {
+public class CustomMapperimp implements CustomnMapper  {
     @Autowired
     private ModelMapper modelMapper;
-
+    @Override
     public UserDTO toDto(User user) {
 
 
@@ -26,13 +26,17 @@ public class Mapper {
         return modelMapper.map(task,TaskDTO.class);
 
     }
-    public User toUser(UserDTO userDTO,User user) {
-        user.setEmail(userDTO.getEmail());
-        user.setAge(userDTO.getAge());
-        user.setUserName(userDTO.getName());
-        return user;
+
+
+
+    @Override
+    public User updateCustomerFromDto(UserDTO dto, User entity) {
+//       return (modelMapper.map(dto,User.class));
+        ModelMapper mapper = new ModelMapper();
+        mapper.typeMap(UserDTO.class, User.class)
+                .addMappings(mp -> mp.skip(User::setPassword));
+        return (mapper.map(dto,User.class));
+//        return mapper;
+
     }
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.Task0.rest;
-import com.example.Task0.dto.Mapper;
+import com.example.Task0.dto.CustomMapperimp;
+import com.example.Task0.dto.CustomnMapper;
 import com.example.Task0.dto.UserDTO;
 import com.example.Task0.entity.BlacklistToken;
 import com.example.Task0.security.Jwt;
@@ -23,15 +24,17 @@ public class UserController {
     private UserService userService;
     private PasswordEncoder passwordEncoder ;
     private BlacklistTokenService blacklistTokenService;
-    private Mapper mapper;
+    private CustomMapperimp mapper;
 
     @Autowired
-    public UserController(UserService userService, PasswordEncoder passwordEncoder, BlacklistTokenService blacklistTokenService, Mapper mapper) {
+    public UserController(UserService userService, PasswordEncoder passwordEncoder, BlacklistTokenService blacklistTokenService, CustomMapperimp mapper) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.blacklistTokenService = blacklistTokenService;
         this.mapper = mapper;
+
     }
+
     //Constructor dependency injection for user service and task service
 
 
@@ -83,9 +86,9 @@ public class UserController {
 
         LogMessages.logger.info("User with Id:"+theUser.getId()+" is updated");
 
-        userService.save(mapper.toUser(userDTO,theUser));
+        userService.save(mapper.updateCustomerFromDto(userDTO,theUser));
 
-        return userDTO;
+        return mapper.toDto(theUser);
     }
     //Delete request for deleting a user depending on its id
     @DeleteMapping("/users/{id}")

@@ -1,6 +1,7 @@
 package com.example.Task0.rest;
 
-import com.example.Task0.dto.Mapper;
+import com.example.Task0.dto.CustomMapperimp;
+import com.example.Task0.dto.CustomnMapper;
 import com.example.Task0.dto.TaskDTO;
 import com.example.Task0.entity.Task;
 import com.example.Task0.exceptions.IdNotFoundError;
@@ -21,10 +22,10 @@ public class TaskController {
 
     private TaskService taskService;
     private UserService userService;
-    private Mapper mapper;
+    private CustomMapperimp mapper;
 
     @Autowired
-    public TaskController(TaskService taskService, UserService userService, Mapper mapper) {
+    public TaskController(TaskService taskService, UserService userService, CustomMapperimp mapper) {
         this.taskService = taskService;
         this.userService = userService;
         this.mapper = mapper;
